@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ExpenditureRecorder.Model\ExpenditureRecorder.Model.csproj" />
+    <ProjectReference Include="..\ExpenditureRecorder.Services\ExpenditureRecorder.Services.csproj" />
+  </ItemGroup>
+
+</Project>
