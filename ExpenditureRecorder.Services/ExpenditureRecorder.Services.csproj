@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ExpenditureRecorder.Model\ExpenditureRecorder.Model.csproj" />
+    <ProjectReference Include="..\ExpenditureRecorder.Model\ExpenditureRecorder.Data.csproj" />
   </ItemGroup>
 
 </Project>

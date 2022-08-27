@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ExpenditureRecorder.Model\ExpenditureRecorder.Model.csproj" />
+    <ProjectReference Include="..\ExpenditureRecorder.Model\ExpenditureRecorder.Data.csproj" />
     <ProjectReference Include="..\ExpenditureRecorder.Services\ExpenditureRecorder.Services.csproj" />
   </ItemGroup>
 

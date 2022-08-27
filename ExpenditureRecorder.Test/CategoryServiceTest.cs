@@ -51,5 +51,12 @@ namespace ExpenditureRecorder.Test
             Assert.AreEqual(1, categories.Count);
             Assert.AreEqual("category1", categories[0].Name);
         }
+
+        //[Test]
+        //public void UpdateCategoryNameById()
+        //{
+        //    Category category = _categoryService.Create("category1");
+        //    category
+        //}
     }
 }

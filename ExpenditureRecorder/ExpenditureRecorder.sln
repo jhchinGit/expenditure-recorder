@@ -7,11 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenditureRecorder", "Expe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenditureRecorder.Test", "..\ExpenditureRecorder.Test\ExpenditureRecorder.Test.csproj", "{2D38B714-46F5-4031-8F88-7218542EFFD9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenditureRecorder.Model", "..\ExpenditureRecorder.Model\ExpenditureRecorder.Model.csproj", "{5A6D8A44-486D-428C-BBA4-D0747DEBE670}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenditureRecorder.Data", "..\ExpenditureRecorder.Model\ExpenditureRecorder.Data.csproj", "{5A6D8A44-486D-428C-BBA4-D0747DEBE670}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenditureRecorder.Services", "..\ExpenditureRecorder.Services\ExpenditureRecorder.Services.csproj", "{38E2407C-8092-4F59-A228-9D2841EA29C1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenditureRecorder.Exception", "..\ExpenditureRecorder.Exception\ExpenditureRecorder.Exception.csproj", "{23A337CF-D4C4-48E1-B66E-6C135F8B016B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +33,6 @@ Global
 		{38E2407C-8092-4F59-A228-9D2841EA29C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38E2407C-8092-4F59-A228-9D2841EA29C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38E2407C-8092-4F59-A228-9D2841EA29C1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{23A337CF-D4C4-48E1-B66E-6C135F8B016B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{23A337CF-D4C4-48E1-B66E-6C135F8B016B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{23A337CF-D4C4-48E1-B66E-6C135F8B016B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{23A337CF-D4C4-48E1-B66E-6C135F8B016B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
