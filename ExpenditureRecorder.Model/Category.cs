@@ -2,11 +2,13 @@
 {
     public class Category
     {
-        public string Name { get; private set; }
+        public long Id { get; private set; }
+        public string Name { get; set; }
 
-        public Category(string name)
+        public Category(long id, string name)
         {
-            this.Name = name;
+            Id = id;
+            Name = name;
         }
     }
 }

@@ -52,11 +52,44 @@ namespace ExpenditureRecorder.Test
             Assert.AreEqual("category1", categories[0].Name);
         }
 
-        //[Test]
-        //public void UpdateCategoryNameById()
-        //{
-        //    Category category = _categoryService.Create("category1");
-        //    category
-        //}
+        [Test]
+        public void UpdateCategoryNameById()
+        {
+            Category category = _categoryService.Create("category1");
+            category.Name = "category2";
+            Category updatedCategory = _categoryService.Update(category);
+            Assert.AreEqual("category2", updatedCategory.Name);
+            List<Category> categories = _categoryService.GetAll();
+            Assert.AreEqual("category2", categories[0].Name);
+        }
+
+        [Test]
+        public void UpdateCategoryNameByInvalidId()
+        {
+            _categoryService.Create("category1");
+            Category category = new(-1, "category2");
+            Assert.Throws<CategoryNotFoundException>(
+                () => _categoryService.Update(category));
+        }
+
+        [Test]
+        public void UpdateDuplicateCategoryNameById()
+        {
+            _categoryService.Create("category1");
+            Category category = _categoryService.Create("category2");
+            category.Name = "category1";
+            Assert.Throws<CategoryNameInUsedException>(
+                () => _categoryService.Update(category));
+        }
+
+        [Test]
+        public void UpdateNullCategoryNameById()
+        {
+            _categoryService.Create("category1");
+            Category category = _categoryService.Create("category2");
+            category.Name = null;
+            Assert.Throws<CategoryNameCannotBeEmptyOrNull>(
+                () => _categoryService.Update(category));
+        }
     }
 }
