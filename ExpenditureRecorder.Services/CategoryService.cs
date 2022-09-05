@@ -7,7 +7,7 @@ namespace ExpenditureRecorder.Services
 {
     public class CategoryService
     {
-        private readonly List<Category> _categories;
+        private List<Category> _categories;
 
         public CategoryService()
         {
@@ -78,6 +78,19 @@ namespace ExpenditureRecorder.Services
             {
                 throw new CategoryNameInUsedException();
             }
+        }
+
+        public void Delete(Category category)
+        {
+            bool isCategoryCanBeFound =
+                _categories.SingleOrDefault(c => c.Id == category.Id) != null;
+
+            if (!isCategoryCanBeFound)
+            {
+                throw new CategoryNotFoundException();
+            }
+
+            _categories.Remove(category);
         }
     }
 }

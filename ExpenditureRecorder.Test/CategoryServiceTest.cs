@@ -53,7 +53,7 @@ namespace ExpenditureRecorder.Test
         }
 
         [Test]
-        public void UpdateCategoryNameById()
+        public void UpdateCategoryName()
         {
             Category category = _categoryService.Create("category1");
             category.Name = "category2";
@@ -64,7 +64,7 @@ namespace ExpenditureRecorder.Test
         }
 
         [Test]
-        public void UpdateCategoryNameByInvalidId()
+        public void UpdateCategoryNameByInvalidIdCategory()
         {
             _categoryService.Create("category1");
             Category category = new(-1, "category2");
@@ -73,7 +73,7 @@ namespace ExpenditureRecorder.Test
         }
 
         [Test]
-        public void UpdateDuplicateCategoryNameById()
+        public void UpdateDuplicateCategoryName()
         {
             _categoryService.Create("category1");
             Category category = _categoryService.Create("category2");
@@ -83,13 +83,38 @@ namespace ExpenditureRecorder.Test
         }
 
         [Test]
-        public void UpdateNullCategoryNameById()
+        public void UpdateNullCategoryName()
         {
             _categoryService.Create("category1");
             Category category = _categoryService.Create("category2");
             category.Name = null;
             Assert.Throws<CategoryNameCannotBeEmptyOrNull>(
                 () => _categoryService.Update(category));
+        }
+
+        [Test]
+        public void DeleteCategorySuccessfully()
+        {
+            Category category = _categoryService.Create("category1");
+            _categoryService.Delete(category);
+            List<Category> categories = _categoryService.GetAll();
+            Assert.AreEqual(0, categories.Count);
+        }
+
+        [Test]
+        public void DeleteCategoryByInvalidCategoryId()
+        {
+            _categoryService.Create("category1");
+            Category category = new(-1, "category1");
+            Assert.Throws<CategoryNotFoundException>(
+               () => _categoryService.Delete(category));
+        }
+
+        [Test]
+        public void DeleteCategoryByProvidingNullCategory()
+        {
+            Assert.Throws<CategoryNotFoundException>(
+               () => _categoryService.Delete(null));
         }
     }
 }
