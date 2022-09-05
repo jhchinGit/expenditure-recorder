@@ -1,5 +1,4 @@
-﻿using ExpenditureRecorder.Data.Enums;
-using System;
+﻿using System;
 
 namespace ExpenditureRecorder.Data
 {
@@ -8,29 +7,10 @@ namespace ExpenditureRecorder.Data
         public Budget Budget { get; set; }
         public DateTime StartDate { get; set; }
 
-        public Recorder()
+        public Recorder(Budget budget, DateTime startDate)
         {
-            StartDate = DateTime.Now.Date;
-        }
-
-        public void SetBudget(decimal budget)
-        {
-            SetBudget(budget, 100, BudgetTimeline.Monthly);
-        }
-
-        public void SetBudget(decimal budget, int alertPercentage)
-        {
-            SetBudget(budget, alertPercentage, BudgetTimeline.Monthly);
-        }
-
-        public void SetBudget(decimal budget, BudgetTimeline timeline)
-        {
-            SetBudget(budget, 100, timeline);
-        }
-
-        public void SetBudget(decimal budget, int alertPercentage, BudgetTimeline timeline)
-        {
-
+            Budget = budget;
+            StartDate = startDate;
         }
     }
 }
