@@ -7,7 +7,7 @@ namespace ExpenditureRecorder.Services
 {
     public class CategoryService
     {
-        private List<Category> _categories;
+        private readonly List<Category> _categories;
 
         public CategoryService()
         {
@@ -26,16 +26,12 @@ namespace ExpenditureRecorder.Services
         private void ValidateName(string name)
         {
             if (name == null)
-            {
                 throw new CategoryNameCannotBeEmptyOrNull();
-            }
 
             bool isNameDuplicated = _categories.Any(c => c.Name.ToLower() == name.ToLower());
 
             if (isNameDuplicated)
-            {
                 throw new CategoryNameInUsedException();
-            }
         }
 
         private long GetNewId()
@@ -55,9 +51,7 @@ namespace ExpenditureRecorder.Services
                 c => c.Id == category.Id);
 
             if (category1 == null)
-            {
                 throw new CategoryNotFoundException();
-            }
 
             category1.Name = category.Name;
             return category1;
@@ -66,18 +60,14 @@ namespace ExpenditureRecorder.Services
         private void ValidateExistingName(long id, string name)
         {
             if (name == null)
-            {
                 throw new CategoryNameCannotBeEmptyOrNull();
-            }
 
             bool isNameDuplicated = _categories
                 .Any(c => c.Name.ToLower() == name.ToLower() &&
                 c.Id != id);
 
             if (isNameDuplicated)
-            {
                 throw new CategoryNameInUsedException();
-            }
         }
 
         public void Delete(Category category)
@@ -86,9 +76,7 @@ namespace ExpenditureRecorder.Services
                 _categories.SingleOrDefault(c => c.Id == category.Id) != null;
 
             if (!isCategoryCanBeFound)
-            {
                 throw new CategoryNotFoundException();
-            }
 
             _categories.Remove(category);
         }

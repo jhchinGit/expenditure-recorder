@@ -1,18 +1,17 @@
 ﻿using ExpenditureRecorder.Data;
-using ExpenditureRecorder.Data.Enums;
 using System;
+using System.Collections.Generic;
 
 namespace ExpenditureRecorder.Services
 {
     public class RecorderService
     {
-        private readonly Recorder _recorder;
+        public List<Item> IncomeItems { get; private set; }
+        public List<Item> ExpenseItems { get; private set; }
 
-        public RecorderService(Budget budget)
-        {
-            _recorder = new Recorder(budget, DateTime.Now.Date);
-        }
+        public Budget Budget { get; private set; }
 
-        
+        private readonly DateTime _startDate = DateTime.Now.Date;
+
     }
 }
